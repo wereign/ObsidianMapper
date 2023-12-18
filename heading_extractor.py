@@ -21,7 +21,7 @@ def classify_header(line):
         return 3
 
     else:
-        return 0
+        return -1 # using 0 as file node level.
 
 class Node:
     def __init__(self,string,level):
@@ -48,9 +48,11 @@ class Node:
 
         return self.__repr__()
 
-def create_nodes_list(all_lines):
+def create_nodes_list(all_lines,file_name):
 
-    nodes = []
+    root_node_content = file_name[:-2]
+    root_node = Node(root_node_content,level=0)
+    nodes = [root_node]
     for line in all_lines:
 
         level = classify_header(line)
@@ -64,9 +66,14 @@ def create_nodes_list(all_lines):
 
 all_lines = get_file(file_path)
 
-all_nodes = create_nodes_list(all_lines)
+all_nodes = create_nodes_list(all_lines,file_path) # file name and path will be different eventually
+
+
+def construct_tree(node,idx=0):
+    pass
 
 for node in all_nodes:
     print(node)
+
 
     
