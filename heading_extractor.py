@@ -1,6 +1,6 @@
 import uuid
 import os
-
+import json
 file_path = './media/4.Data Engineering.md'
 
 class Node:
@@ -53,6 +53,7 @@ class Tree:
         self.file_name = os.path.basename(file_path)
         self.file_path = file_path
         self.root_node = self.construct_tree()
+        self.canvas_json = {"nodes":[],	"edges":[] }
         
     def get_file(self):
         file_path = self.file_path
@@ -119,17 +120,28 @@ class Tree:
     
         return node_list[0]
 
-    def assign_obsidian_positions(self):
+    def construct_canvas(self,node):
+        
+        self.canvas_json['nodes'].append(node.obsidian_json)
+        children_nodes = node.children
 
-        # not making a parent card for now
-        vertical_indent = 450
-        horizontal_indent = 420
-        all_children = self.root_node.children
-        print(all_children)
+        if len(children_nodes) > 0:
+            for child in children_nodes:
+                self.construct_canvas(child)
+        
+        return self.canvas_json
+
+
+
+            
 
 
 if __name__ == "__main__":
     
     tree = Tree(file_path)
-    tree.assign_obsidian_positions()
+    final_json = tree.construct_canvas(tree.root_node)
+
+    with open('./some_file.canvas','w') as json_file:
+        json.dump(final_json,json_file)
+    
     

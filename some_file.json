@@ -1,0 +1,257 @@
+{
+  "nodes": [
+    {
+      "id": "253827c0-02c9-4c4c-a29d-46de5dc0030a",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#.Data Engineering]]"
+    },
+    {
+      "id": "e703cb7f-37d6-416e-88be-20a4c3b75e90",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Data Quality and Validation]]"
+    },
+    {
+      "id": "e5330012-3889-4933-9fcf-d9454e1a6e05",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Tools]]"
+    },
+    {
+      "id": "c6de2878-fc96-4e33-af67-b0b5c31f8942",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Data Validation]]"
+    },
+    {
+      "id": "99642701-f6b1-4103-bb3c-a80f0f6fdf7e",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Key Aspects]]"
+    },
+    {
+      "id": "2bd0f15b-ab5d-4956-bf1d-0a3fe894e0d5",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Data Quality]]"
+    },
+    {
+      "id": "05f98e80-ca13-49c4-b535-9ecc83c6ef97",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Key Aspects]]"
+    },
+    {
+      "id": "53b994ff-f6a0-475e-bfee-ad03f3f037ec",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Data Processing]]"
+    },
+    {
+      "id": "4d876958-d70c-4ec2-8886-14cf595052d3",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Key Aspects]]"
+    },
+    {
+      "id": "a8b2b63f-10a9-4d96-89c2-73039749ba73",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Data Transformation]]"
+    },
+    {
+      "id": "f96f212f-494a-4894-b5e2-5fbe84e4663e",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Tools]]"
+    },
+    {
+      "id": "bd007b70-d584-46aa-bdcd-8264b6d4f7c5",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Key Aspects]]"
+    },
+    {
+      "id": "e5587c34-a8ed-43ec-9e63-5dbdb416152f",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Data Storage and Management]]"
+    },
+    {
+      "id": "e609faaa-78be-4ea3-b6d6-03b3593a3986",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Data Management]]"
+    },
+    {
+      "id": "182f77ba-2a3c-459e-9c56-45c1bfc570e8",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Tools]]"
+    },
+    {
+      "id": "31300c68-083c-48eb-a6b1-41338f6ac489",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Key Aspects]]"
+    },
+    {
+      "id": "785962c8-b8c0-4bd1-88af-69080f75dccb",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Data Storage]]"
+    },
+    {
+      "id": "dac726ba-78e3-4a06-a676-a5fdc1ec5657",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Tools]]"
+    },
+    {
+      "id": "c8cdf1d4-42fc-4ee5-ab4f-9860a3900aba",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Key Aspects]]"
+    },
+    {
+      "id": "16f38e0e-b710-4e5a-8a79-cfe859e9f039",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Data Ingestion and Collection]]"
+    },
+    {
+      "id": "b8bcfe04-4eed-40f5-a014-65fa63a1412d",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Tools]]"
+    },
+    {
+      "id": "8495bf93-c4fa-4f1e-8400-07c3f0566374",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Data Collection]]"
+    },
+    {
+      "id": "5fe88aa8-8586-41d4-a5c4-faa571f0008e",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Key Sources]]"
+    },
+    {
+      "id": "2fd2e694-7790-4fbe-b546-bf2b0faa7d8c",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Data Ingestion]]"
+    },
+    {
+      "id": "aa4a5724-2896-4df1-9e22-d56de8e508a6",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Key Aspects]]"
+    },
+    {
+      "id": "c7e9ff68-0365-434e-b1cb-e29be398dfd0",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Data Engineering]]"
+    },
+    {
+      "id": "7e0aa487-aa80-46db-a035-dac5852094ec",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Role of Data Engineer]]"
+    },
+    {
+      "id": "1a9fc110-9744-409a-b3a9-8cc3564d8698",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "![[4.Data Engineering#Key Aspects]]"
+    }
+  ],
+  "edges": []
+}
