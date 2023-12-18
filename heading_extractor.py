@@ -1,5 +1,5 @@
 
-file_path = './4.Data Engineering.md'
+file_path = './media/4.Data Engineering.md'
 
 def get_file(file_path:str):
     with open(file_path) as md_file:
@@ -31,7 +31,7 @@ class Node:
     
     def add_children(self,child_node):
         
-        if child_node.level == self.level - 1:
+        if child_node.level == self.level + 1:
             self.children.append(child_node)
         else:
             pass
@@ -69,11 +69,25 @@ all_lines = get_file(file_path)
 all_nodes = create_nodes_list(all_lines,file_path) # file name and path will be different eventually
 
 
-def construct_tree(node,idx=0):
-    pass
+def construct_tree(node_list):
+    
+    for idx in range(len(node_list)-1,0,-1):
+        
+        # taking node, find the parent and the append the node to the parent.
+        node = node_list[idx]
+        for candidate_idx in range(idx,-1,-1):
+            candidate_node = node_list[candidate_idx]
+            
+            if candidate_node.level == node.level - 1:
+                candidate_node.add_children(node)
+                break
+    
+    
+    return node_list[0]
 
-for node in all_nodes:
-    print(node)
+root_node = construct_tree(all_nodes)
 
+print(root_node)
+print(root_node.children)
 
     
