@@ -43,27 +43,32 @@ class Node:
 
         return self.__repr__()
 
+    def modify_position(self,x,y):
+        
+        self.obsidian_json['x'] = x
+        self.obsidian_json['y'] = y
+        
 class Tree:
     def __init__(self,file_path):
         self.file_name = os.path.basename(file_path)
         self.file_path = file_path
+        self.root_node = self.construct_tree()
         
-    
     def get_file(self):
         file_path = self.file_path
         with open(file_path) as md_file:
             all_lines = md_file.readlines()
         return all_lines
-    
+
     def construct_tree(self):
 
         all_lines = self.get_file()
         all_nodes = self.create_nodes_list(all_lines,self.file_name)
         tree_node = self._construct_tree(all_nodes)
 
-        return tree_node
-    
+        return tree_node  
     @staticmethod
+
     def classify_header(line):   
         h1_id = '# '
         h2_id = '## '
@@ -80,7 +85,6 @@ class Tree:
 
         else:
             return -1 # using 0 as file node level.
-
 
     def create_nodes_list(self,all_lines,file_name):
 
@@ -115,10 +119,17 @@ class Tree:
     
         return node_list[0]
 
+    def assign_obsidian_positions(self):
+
+        # not making a parent card for now
+        vertical_indent = 450
+        horizontal_indent = 420
+        all_children = self.root_node.children
+        print(all_children)
+
 
 if __name__ == "__main__":
     
-    tree_node = Tree(file_path).construct_tree()
-    print(tree_node)
-    children = tree_node.children
-    print(children[0].obsidian_json)
+    tree = Tree(file_path)
+    tree.assign_obsidian_positions()
+    
