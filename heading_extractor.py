@@ -39,8 +39,8 @@ class Node:
     def __repr__(self):
 
         string = ''
-
-        string += f'Level: {self.level}\nContent: {self.string}'
+        indent="\t"*self.level
+        string += f'{indent}Level: {self.level}\n{indent}Content: {self.string}'
 
         return string   
     
