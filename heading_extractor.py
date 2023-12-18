@@ -7,10 +7,9 @@ class Node:
     def __init__(self,string,level,file_name):
         self.level = level
         self.string = string
-
         self.file_name = file_name[:-3] # dropping extension
         
-        self.title_content = self.string[self.level+1:-1] # ignoring #, ## etc and the final newline
+        # self.title_content = self.string[self.level+1:-1] # ignoring #, ## etc and the final newline
         
         self.obsidian_json = {
             "id":str(uuid.uuid4()),
@@ -19,10 +18,15 @@ class Node:
             "width":400,
             "height":400,
             "type":'text',
-            "text":f"![[{self.file_name}#{self.title_content}]]"
+            # "text":f"![[{self.file_name}#{self.title_content}]]"
+            "text":self.string
         }
 
         self.children = []
+    
+    def modify_node_string(self,new_string):
+        self.string = new_string
+        self.obsidian_json['text'] = self.string
     
     def add_children(self,child_node):
         
@@ -92,15 +96,21 @@ class Tree:
         root_node_content = file_name[:-2]
         root_node = Node(root_node_content,0,file_name)
         nodes = [root_node]
+
+        current_node = None
         for line in all_lines:
 
             level = self.classify_header(line)
-
             if level > 0:
-
                 node = Node(line,level,file_name)
                 nodes.append(node)
-        
+                current_node = node
+            else:
+                if current_node != None:
+                    # print(current_node)
+                    new_string = current_node.string + line
+                    current_node.modify_node_string(new_string)
+            
         return nodes
 
     @staticmethod
