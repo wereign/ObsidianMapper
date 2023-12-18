@@ -68,7 +68,6 @@ all_lines = get_file(file_path)
 
 all_nodes = create_nodes_list(all_lines,file_path) # file name and path will be different eventually
 
-
 def construct_tree(node_list):
     
     for idx in range(len(node_list)-1,0,-1):
