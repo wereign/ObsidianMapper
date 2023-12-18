@@ -1,0 +1,15 @@
+{
+    "nodes":[
+        {
+          "id": "c6b1f221-9560-4d90-b74a-01779eff0ae9",
+          "x": 0,
+          "y": 0,
+          "width": 400,
+          "height": 400,
+          "type": "text",
+          "text": "![[4.Data Engineering.#Data Quality and Validation]]"
+        }
+    ],
+
+    "edges":[]
+}

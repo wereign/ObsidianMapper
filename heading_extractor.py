@@ -3,13 +3,25 @@ import os
 
 file_path = './media/4.Data Engineering.md'
 
-
-
-
 class Node:
-    def __init__(self,string,level):
+    def __init__(self,string,level,file_name):
         self.level = level
         self.string = string
+
+        self.file_name = file_name[:-3] # dropping extension
+        
+        self.title_content = self.string[self.level+1:-1] # ignoring #, ## etc and the final newline
+        
+        self.obsidian_json = {
+            "id":str(uuid.uuid4()),
+            "x":0,
+            "y":0,
+            "width":400,
+            "height":400,
+            "type":'text',
+            "text":f"![[{self.file_name}#{self.title_content}]]"
+        }
+
         self.children = []
     
     def add_children(self,child_node):
@@ -31,11 +43,10 @@ class Node:
 
         return self.__repr__()
 
-
-class TreeFunctions:
+class Tree:
     def __init__(self,file_path):
         self.file_name = os.path.basename(file_path)
-        self.file_path = self.file_path
+        self.file_path = file_path
         
     
     def get_file(self):
@@ -48,7 +59,7 @@ class TreeFunctions:
 
         all_lines = self.get_file()
         all_nodes = self.create_nodes_list(all_lines,self.file_name)
-        tree_node = self.construct_tree(all_nodes)
+        tree_node = self._construct_tree(all_nodes)
 
         return tree_node
     
@@ -70,25 +81,25 @@ class TreeFunctions:
         else:
             return -1 # using 0 as file node level.
 
-    @staticmethod
-    def create_nodes_list(all_lines,file_name):
+
+    def create_nodes_list(self,all_lines,file_name):
 
         root_node_content = file_name[:-2]
-        root_node = Node(root_node_content,level=0)
+        root_node = Node(root_node_content,0,file_name)
         nodes = [root_node]
         for line in all_lines:
 
-            level = classify_header(line)
+            level = self.classify_header(line)
 
             if level > 0:
 
-                node = Node(line,level)
+                node = Node(line,level,file_name)
                 nodes.append(node)
         
         return nodes
 
     @staticmethod
-    def construct_tree(node_list):
+    def _construct_tree(node_list):
     
         for idx in range(len(node_list)-1,0,-1):
             
@@ -104,4 +115,10 @@ class TreeFunctions:
     
         return node_list[0]
 
+
+if __name__ == "__main__":
     
+    tree_node = Tree(file_path).construct_tree()
+    print(tree_node)
+    children = tree_node.children
+    print(children[0].obsidian_json)
