@@ -66,6 +66,7 @@ all_lines = get_file(file_path)
 
 all_nodes = create_nodes_list(all_lines)
 
-print(all_nodes)
+for node in all_nodes:
+    print(node)
 
     
