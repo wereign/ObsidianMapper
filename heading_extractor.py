@@ -8,11 +8,11 @@ class Node:
         self.level = level
         self.string = string
         self.file_name = file_name[:-3] # dropping extension
-        
-        # self.title_content = self.string[self.level+1:-1] # ignoring #, ## etc and the final newline
+        self.uuid = str(uuid.uuid4())
+        self.title_content = self.string[self.level+1:-1] # ignoring #, ## etc and the final newline
         
         self.obsidian_json = {
-            "id":str(uuid.uuid4()),
+            "id":self.uuid,
             "x":0,
             "y":0,
             "width":400,
@@ -35,11 +35,14 @@ class Node:
         else:
             pass
     
-    def __repr__(self):
+    def __repr__(self,with_content=False):
 
         string = ''
         indent="\t"*self.level
-        string += f'{indent}Level: {self.level}\n{indent}Content: {self.string}'
+        string += f'{indent}Level: {self.level} Content: {self.title_content}'
+
+        if with_content:
+            string += '\n'+indent+self.string
 
         return string   
     
@@ -130,28 +133,63 @@ class Tree:
     
         return node_list[0]
 
-    def construct_canvas(self,node):
+    def construct_cards(self,node):
         
         self.canvas_json['nodes'].append(node.obsidian_json)
         children_nodes = node.children
 
         if len(children_nodes) > 0:
             for child in children_nodes:
-                self.construct_canvas(child)
+                self.construct_cards(child)
         
         return self.canvas_json
 
+    def _connect_edges(self,node):
 
+        for child_node in node.children:
+            edge_dict = {"id":str(uuid.uuid4()),
+                         "fromNode":node.uuid,
+                         "fromSide":"bottom",
+                         "toNode":child_node.uuid,
+                         "toSide":"top"}
+            self.canvas_json['edges'].append(edge_dict)
+            
+            print(child_node.title_content)
+            print(child_node.children)
+            if len(child_node.children) > 0:
+                self._connect_edges(child_node)
 
+        
+
+def print_tree(node):
+
+    print(node.title_content)
+
+    if len(node.children) > 0:
+
+        for child in node.children:
+            
+            print_tree(child)
+    else:
+        pass
             
 
 
 if __name__ == "__main__":
     
     tree = Tree(file_path)
-    final_json = tree.construct_canvas(tree.root_node)
-
+    tree.construct_cards(tree.root_node)
+    tree._connect_edges(tree.root_node)
+    
+    # print(tree.canvas_json)
     with open('./some_file.canvas','w') as json_file:
-        json.dump(final_json,json_file)
+        json.dump(tree.canvas_json,json_file)
+
+    print()
+    print()
+    print_tree(tree.root_node)
+    
+    
+    
     
     
