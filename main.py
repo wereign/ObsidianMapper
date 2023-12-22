@@ -11,14 +11,15 @@ class Node:
         self.uuid = str(uuid.uuid4())
         self.title_content = self.string[self.level+1:-1] # ignoring #, ## etc and the final newline
         
+        self.x = 0
+        self.y = (self.level * 500) + 400
         self.obsidian_json = {
             "id":self.uuid,
-            "x":0,
-            "y":0,
+            "x":self.x,
+            "y":self.y,
             "width":400,
             "height":400,
             "type":'text',
-            # "text":f"![[{self.file_name}#{self.title_content}]]"
             "text":self.string
         }
 
@@ -104,8 +105,12 @@ class Tree:
         for line in all_lines:
 
             level = self.classify_header(line)
+            count = 0
             if level > 0:
                 node = Node(line,level,file_name)
+                
+                if count < 5:
+                    print(node.y)
                 nodes.append(node)
                 current_node = node
             else:
@@ -182,7 +187,9 @@ if __name__ == "__main__":
     tree._connect_edges(tree.root_node)
     
     # print(tree.canvas_json)
-    with open('./some_file.canvas','w') as json_file:
+
+    canvas_path = r"C:\Users\viren\Documents\Obsidian Vault\Archive\Semester V\Principles of Data Science & Engineering\some_file_y_fixed.canvas"
+    with open(canvas_path,'w') as json_file:
         json.dump(tree.canvas_json,json_file)
 
     print()

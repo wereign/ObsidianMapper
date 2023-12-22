@@ -1,1 +1,447 @@
-{"nodes": [{"id": "499af946-b1b2-47a2-8bfb-2c0523c79afe", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "4.Data Engineering."}, {"id": "a47a0977-055f-4a8a-9cd7-fc74097d89ff", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "# Data Quality and Validation\n\n> [!cite]+ Definition\n> Data quality and validation are essential element of data management and data engineering. Ensuring data quality and validation involves processes that assess, clean, and maintain data to ensure its accuracy, consistency, and reliability.\n\n- Ensuring the accuracy of analysis and decision-making processes. \n- Reducing the risk of errors or bias in data-driven applications. \n- Complying with regulatory and industry standards (e.g., GDPR, HIPAA).\n- Improving the overall reliability and trustworthiness of data.\n\n"}, {"id": "0f88aed4-7198-4f2b-89ad-4ec81a1c3192", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "## Tools\n\n1. **Trifacta**: A data wrangling and data preparation tool for cleaning and structuring data.  \n2. **Great Expectations**: An open-source library for data validation and data quality assurance\n\n\n"}, {"id": "138599ab-5f50-46aa-a105-4ced0df75d5c", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "## Data Validation\n\n> [!cite] definition+ \n> Data validation is the process of checking data for errors, inconsistencies, and adherence to predefined rules and constraints. It ensures that data meets specific criteria or standards\n\n"}, {"id": "8f3b6efc-fa15-4ac5-a4c6-5ea1755eeb57", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "### Key Aspects\n\n1. **Schema Validation**: Ensuring that data adheres to a predefined data model or schema. This includes verifying that data types, formats, and relationships between data elements are correct. \n2. **Cross-field Validation**: Checking for consistency between different data fields or columns, such as verifying that a birthdate is earlier than a current date. \n3. **Business Rules Validation:** Enforcing business-specific rules and constraints on data. For example, ensuring that a product's price falls within a valid price range. \n4. **Format Validation:** Verifying that data adheres to expected formats, such as date formats, phone numbers, or email addresses. \n5. **Referential Integrity Validation:** Ensuring that relationships between data in different tables or datasets are maintained correctly.  \n6. **Data Cleaning:** Identifying and correcting errors, inaccuracies, and inconsistencies in data, which often involves processes like imputation for missing values.\n\n"}, {"id": "5ee5e6f3-5f63-4435-9017-e133a1262a9e", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "## Data Quality\n\n> [!cite]+ Definition\n> - Data quality refers to the overall health and reliability of data. \n> - High data quality means that the data is accurate, complete, consistent, and relevant for its intended use. \n> - Low data quality may include issues like missing values, inconsistencies, errors, and inaccuracies\n\n"}, {"id": "7309e8ef-0286-4d1f-9d5d-7556c2725a20", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "### Key Aspects\n\n1. **Accuracy**: Data should reflect the real-world phenomena it represents, and inaccuracies should be minimized. \n2. **Completeness**: Data should not have missing values, ensuring that all necessary information is present. \n3. **Consistency**: Data should be consistent, meaning that it does not contain conflicting or contradictory information. \n4. **Relevance**: Data should be relevant to the intended purpose, and irrelevant or redundant data should be minimized. \n5. **Timeliness**: Data should be up-to-date and reflect the most recent information, where relevant. \n6. **Validity**: Data should conform to defined rules and constraints. For example, dates should follow a specific format. \n7. **Reliability**: Data should be reliable and dependable, meaning that it can be used with confidence\n\n"}, {"id": "84b4fbfd-3f54-452b-9218-b7cbd5e4c5e7", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "# Data Processing\n\n> [!cite]+ Definition\n> Data processing refers to the application of various operations, calculations, and transformations to data to extract valuable insights or perform specific tasks. \n> Data processing can be carried out using different methods, depending on the nature of the data and the goals of analysis\n\n\n"}, {"id": "c947118a-e85b-4b86-92da-4c143c318025", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "## Key Aspects\n\n1.  **ETL (Extract, Transform, Load):** In the context of data processing, ETL refers to the process of extracting data from source systems, transforming it to meet specific requirements, and loading it into a target system or data warehouse. \n2. **Data Filtering**: Selecting a subset of data based on specific criteria, such as time intervals or data quality, to reduce the volume of data for analysis. \n3. **Data Aggregation and Summarization:** Creating summaries or aggregations of data, which can be used for reporting, dashboards, or to reduce data complexity.  \n4. **Statistical Analysis:** Applying statistical methods to uncover patterns, correlations, and trends in the data. \n5. **Machine Learning**: Implementing machine learning algorithms for tasks like predictive modeling, classification, clustering, and anomaly detection. \n6. **Real-time Processing**: Processing data as it arrives (streaming data) for real-time analytics, monitoring, and decision-makin\n\n"}, {"id": "38488229-179b-48b7-9eaa-95c7e58f817c", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "# Data Transformation\n\n> [!cite]+ Definition\n> Data transformation and processing are crucial steps in the data engineering pipeline, where raw data is converted, cleaned, and prepared for analysis or other downstream tasks. These processes are essential to ensure that data is in a usable format and that it meets quality and consistency standards\n\n\n"}, {"id": "bfe5a0d1-e7f4-4b8d-a0ce-c67dd7a8e7cf", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "## Tools\n\n1. **Apache Spark**: A powerful open-source data processing framework for batch and real-time data processing, machine learning, and graph processing. \n2. **Apache Flink**: A stream processing framework for big data processing with low latency and high throughput.\n3. **Apache Beam**: An open-source, unified model for defining both batch and stream data processing pipelines. \n4. **Python Libraries**: Tools like Pandas, NumPy, and Dask are widely used for data manipulation and analysis\n"}, {"id": "e68f7e2d-aeb6-417e-894a-69e0fe2c8726", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "## Key Aspects\n1. **Data Cleaning**: Identifying and handling missing values, outliers, and errors to ensure data quality. Common techniques include imputation, removal, and correction.\n2. **Data Standardization:** Bringing data into a consistent format, such as converting date formats, units of measurement, or text casing.\n3. **Data Enrichment**: Enhancing data by adding additional information, such as geocoding addresses to obtain latitude and longitude coordinates or merging data from different sources to create more comprehensive datasets\n4. **Data Aggregation**: Summarizing and condensing data to reduce its volume while retaining its essential information. Aggregation may involve grouping data by specific attributes or time intervals.\n5. **Data Encoding**: Converting categorical data into numerical representations, which is often necessary for machine learning algorithms. Common techniques include one-hot encoding, label encoding, and target encoding\n6. **Data Integration**: Combining data from various sources or databases to create unified datasets for analysis. This process may involve resolving schema conflicts and data reconciliation.\n7. **Feature Engineering**: Creating new features or variables from existing data to improve model performance in machine learning or data analysis. This can include mathematical transformations, scaling, and feature extraction\n\n"}, {"id": "d07be5cf-851f-4846-bb8b-633f5829fe70", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "# Data Storage and Management\n\n\n> [!cite]+ Definition\n> Data storage and management are integral components of data engineering and involve the \n> - storage\n> - organization\n> - and handling of data \n> to ensure it is readily \n> - accessible\n> - secure\n> - efficiently managed for various data-related activities\n\n\n"}, {"id": "41094cee-1b47-458b-b26b-f1e5570c0da3", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "## Data Management\n\n> [!cite]+ Definition\n> Data management encompasses the processes and practices that enable the efficient organization, cataloging, and maintenance of data. It ensures that data is well-maintained and easily accessible for various data-related tasks\n\n"}, {"id": "6b4df99d-cd10-4095-903d-2f2543b706e3", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "### Tools\n1. **Apache Atlas**: An open-source metadata and governance platform for data lakes. \n2. **Collibra:** A data governance and cataloging platform for managing and curating data assets\n\n\n\n"}, {"id": "1cd10ccb-b6bb-407c-a132-a3c8fb475ed3", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "### Key Aspects\n1. **Data Cataloging**\n2. **Data Governance**\n3. **Data Lifecycle Management**\n4. **Data Versioning**\n5. **Data Quality Management**\n6. **Data Retrieval and Access Control**\n7. **Data Documentation**\n8. **Data Compliance**\n\n"}, {"id": "3c94fbff-cc65-4d2c-9bf5-22b5af280864", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "## Data Storage\n> [!cite]+ Definition\n> - Data storage refers to the physical or digital locations where data is stored.\n> - Encompasses the selection of appropriate storage systems and technologies\n> - as well as the strategies for storing data efficiently and securely.\n\n\n"}, {"id": "5f19d017-c593-47ea-b67c-9289f9809613", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "### Tools\n1. **Relational Database Management Systems (RDBMS)**: Tools like MySQL, PostgreSQL, and Microsoft SQL Server are commonly used for structured data storage.  \n2. **NoSQL Databases:** Technologies like MongoDB, Cassandra, and Redis are used for flexible and scalable storage of unstructured or semi-structured data. \n3. **Hadoop Distributed File System (HDFS):** A distributed file system that stores data across clusters and is part of the Hadoop ecosystem.  \n4. **Amazon S3**: An object storage service provided by AWS, often used as a data lake for storing large volumes of data\n\n"}, {"id": "ff046729-e7d6-49db-9e4e-c61e0225b263", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "### Key Aspects\n1. **Data Storage Solutions**: Choosing the right storage solutions based on data types and needs. This can include relational databases, NoSQL databases, data warehouses, data lakes, cloud storage, and more.\n2. **Scalability**: Ensuring that the chosen storage solution can handle the volume of data and is scalable to accommodate future growth.\n3. **Performance**: Optimizing data storage for quick retrieval and access, including strategies like indexing and caching\n4. **Data Replication and Backup**: Implementing data replication and backup strategies to ensure data availability and recovery in case of hardware failures or data loss.\n5. **Data Security**: Implementing security measures, including access controls, encryption, and authentication, to protect data from unauthorized access or breaches.\n6. **Data Partitioning**: Partitioning large datasets to improve query performance and data management.\n\n"}, {"id": "ca3467ad-0746-443f-bc65-be92c9dbfa54", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "# Data Ingestion and Collection\n\n\n> [!cite]+ Definition \n> Data ingestion and collection are fundamental processes m the field of data engineering, Involving the acquisition of data from various sources and the initial storage of that data for further processing and analysis\n\n"}, {"id": "47ea2199-65e2-43ca-808e-bee0d00f4c63", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "## Tools\n1. **Apache Kafka**\n2. **Apache Flume**\n3. **Logstash**\n4. **AWS Data Pipeline**\n\n"}, {"id": "5f1c763d-7ade-417f-9ce3-45e9ac4f1aa3", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "## Data Collection\n\n> [!cite]+ Definition\n> Data collection is the broader process of gathering data from a variety of sources. The initial step of acquiring data before it undergoes any transformation or processing\n\n"}, {"id": "bb136ff8-c252-45f1-9dc6-994113daecf2", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "### Key Sources\n\n1. **Source Diversity**: Data can be collected from a multitude of sources, including databases, external APIs, web scraping, social media, sensors, log files, and more.\n2. **Data Types**: : Data collected can come in various forms, such as structured data (e.g., databases), semi-structured data (e.g., JSON), and unstructured data (e.g., text, images, videos).\n3. **Sampling**: Data collection may involve random sampling or systematic data collection methods, depending on the research or analytical goals.\n4. **Data Volume**: The volume of data collected can vary widely, from small datasets to big data, and even massive datasets in the case of organizations dealing with large-scale data\n\n"}, {"id": "44a976f3-b84f-4289-a6d9-40fc5264bcf4", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "## Data Ingestion\n\n> [!cite]+ Definition \n> Data ingestion refers to the process of acquiring and importing data from a wide range of sources into a data storage or processing system.\n> involves extracting data from its source, transforming it into a suitable format, and loading it into a target storage or processing system.\n\n"}, {"id": "466d5e20-b18f-46b2-8863-bb33aa6cb604", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "### Key Aspects\n1. **Extraction**: Data is retrieved from source systems, which can include databases, web services, application logs, IoT devices, and more.\n2. **Transformation:** : Data may need to be cleaned, standardized, or reformatted to ensure uniformity and quality.\n3. **Loading:** The transformed data is then loaded into a target system, such as a data warehouse, data lake, or a real-time processing pipeline.\n4. **Batch vs Real-time:** Data can be ingested in batches, where data is collected and processed at specified intervals, or in real-time, where data is collected and processed as it arrive\n5. **Error Handling:** Data ingestion processes must handle errors and exceptions, ensuring that data is ingested completely and accurately.\n\n\n\n"}, {"id": "ff47b549-83a1-4379-8491-16886bcc0ec5", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "# Data Engineering\n\n> [!cite]+  Definition\n> Field of study and practice of\n> 1. collection\n> 2. transformation\n> 3. storage\n> 4. management \n> of data in order to make it accessible, reliable and usable for various applications and processes\n\n \n\n\n"}, {"id": "0a7b0ca2-494c-4b45-ada3-66d8fc55f067", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "## Role of Data Engineer\n\n> Responsible for **designing and building the infrastructure** and systems that enable the efficient and effective handling of data within an organization\n\n"}, {"id": "10a2bce4-313b-4548-a1c1-5da03e42d895", "x": 0, "y": 0, "width": 400, "height": 400, "type": "text", "text": "## Key Aspects\n\n1. **Data Collection**: Responsible for collecting data from a wide range of sources (databases, logs, APIs and more). Also includes setting up data pipelines for ingestion\n2. **Data Transformation**:Data often needs to be cleaned, standardized, and transformed into a usable format. Data engineers perform these transformations using ETL (Extract, Transform, Load) processes to ensure data quality\n3. **Data Storage**: Data engineers select appropriate storage solutions, such as relational databases, NoSQL databases, data lakes, or cloud storage, to store the data securely and efficiently.\n4. **Data Management**: Data must be organized and cataloged to facilitate its retrieval and usage. Data engineers design and implement data management strategies and metadata systems.\n5. **Data Quality and Validation**: Data engineers are responsible for ensuring that data is accurate, complete, and consistent. They implement data validation and quality control processes to identify and rectify errors or discrepancies\n6. **Data Pipelines**: Data engineering involves the creation of data pipelines, which are automated processes that move and transform data from source to destination, making it ready for analysis and other downstream applications\n7. **Data Governance**: Data governance policies and practices are established to ensure that data is used responsibly and complies with regulatory requirements. Data engineers play a role in implementing data governance frameworks.\n8. **Data Security**: Maintaining the security and privacy of data is a paramount concern. Data engineers implement access controls, encryption, and other security measures to protect sensitive data\n9. **Scalability and Performance**: : Data engineers must design systems that can handle large volumes of data and are scalable to meet the organization's growing needs. Performance optimization is crucial for efficient data processing\n10. **Tools and Technologies**: Data engineers use a variety of tools and technologies, including database management systems, ETL tools, big data frameworks, and cloud services, to carry out their tasks\n\n"}], "edges": [{"id": "a65b2a32-a03c-49a0-b5e4-e2971a19180c", "fromNode": "499af946-b1b2-47a2-8bfb-2c0523c79afe", "fromSide": "bottom", "toNode": "a47a0977-055f-4a8a-9cd7-fc74097d89ff", "toSide": "top"}, {"id": "f9d22641-4406-4f69-8e8c-58508e1044cd", "fromNode": "a47a0977-055f-4a8a-9cd7-fc74097d89ff", "fromSide": "bottom", "toNode": "0f88aed4-7198-4f2b-89ad-4ec81a1c3192", "toSide": "top"}, {"id": "300b09c4-4d27-48b6-891a-b897f6b9c10f", "fromNode": "a47a0977-055f-4a8a-9cd7-fc74097d89ff", "fromSide": "bottom", "toNode": "138599ab-5f50-46aa-a105-4ced0df75d5c", "toSide": "top"}, {"id": "b5cde9b8-83d7-4c05-a880-fcbc66e9825e", "fromNode": "138599ab-5f50-46aa-a105-4ced0df75d5c", "fromSide": "bottom", "toNode": "8f3b6efc-fa15-4ac5-a4c6-5ea1755eeb57", "toSide": "top"}, {"id": "1309320b-866c-410c-af57-6d59188f2948", "fromNode": "a47a0977-055f-4a8a-9cd7-fc74097d89ff", "fromSide": "bottom", "toNode": "5ee5e6f3-5f63-4435-9017-e133a1262a9e", "toSide": "top"}, {"id": "da40c880-336c-46c8-aa58-a71e5aa6f8bd", "fromNode": "5ee5e6f3-5f63-4435-9017-e133a1262a9e", "fromSide": "bottom", "toNode": "7309e8ef-0286-4d1f-9d5d-7556c2725a20", "toSide": "top"}, {"id": "3c76a0d3-6ded-4196-91e3-86e38eb5d973", "fromNode": "499af946-b1b2-47a2-8bfb-2c0523c79afe", "fromSide": "bottom", "toNode": "84b4fbfd-3f54-452b-9218-b7cbd5e4c5e7", "toSide": "top"}, {"id": "206858d8-7f0b-4ee2-98dc-8eb6c3b024d7", "fromNode": "84b4fbfd-3f54-452b-9218-b7cbd5e4c5e7", "fromSide": "bottom", "toNode": "c947118a-e85b-4b86-92da-4c143c318025", "toSide": "top"}, {"id": "b7a17551-c47e-4994-b049-4c4b4027116b", "fromNode": "499af946-b1b2-47a2-8bfb-2c0523c79afe", "fromSide": "bottom", "toNode": "38488229-179b-48b7-9eaa-95c7e58f817c", "toSide": "top"}, {"id": "98335a58-8144-494f-953c-96f16f87d1e2", "fromNode": "38488229-179b-48b7-9eaa-95c7e58f817c", "fromSide": "bottom", "toNode": "bfe5a0d1-e7f4-4b8d-a0ce-c67dd7a8e7cf", "toSide": "top"}, {"id": "3fcc9f2b-c29b-4433-9bb1-e5b366a08d94", "fromNode": "38488229-179b-48b7-9eaa-95c7e58f817c", "fromSide": "bottom", "toNode": "e68f7e2d-aeb6-417e-894a-69e0fe2c8726", "toSide": "top"}, {"id": "8f6a1af4-fd90-4804-b675-a6e6eeb37d34", "fromNode": "499af946-b1b2-47a2-8bfb-2c0523c79afe", "fromSide": "bottom", "toNode": "d07be5cf-851f-4846-bb8b-633f5829fe70", "toSide": "top"}, {"id": "61383c3a-673a-4d82-93e8-b1d7d4d91aff", "fromNode": "d07be5cf-851f-4846-bb8b-633f5829fe70", "fromSide": "bottom", "toNode": "41094cee-1b47-458b-b26b-f1e5570c0da3", "toSide": "top"}, {"id": "1fb5fbe7-bfb8-4243-8590-ebb76ef106f5", "fromNode": "41094cee-1b47-458b-b26b-f1e5570c0da3", "fromSide": "bottom", "toNode": "6b4df99d-cd10-4095-903d-2f2543b706e3", "toSide": "top"}, {"id": "5c499d3c-6c7b-4d69-ad93-9b343ec02e52", "fromNode": "41094cee-1b47-458b-b26b-f1e5570c0da3", "fromSide": "bottom", "toNode": "1cd10ccb-b6bb-407c-a132-a3c8fb475ed3", "toSide": "top"}, {"id": "8cb4f3f2-dfa2-4bb3-be77-228d6092bd03", "fromNode": "d07be5cf-851f-4846-bb8b-633f5829fe70", "fromSide": "bottom", "toNode": "3c94fbff-cc65-4d2c-9bf5-22b5af280864", "toSide": "top"}, {"id": "8e38c501-b6c9-4a53-93a9-a4f63ccea11b", "fromNode": "3c94fbff-cc65-4d2c-9bf5-22b5af280864", "fromSide": "bottom", "toNode": "5f19d017-c593-47ea-b67c-9289f9809613", "toSide": "top"}, {"id": "9d1bf85a-ec8d-48c6-9de4-80e296aae306", "fromNode": "3c94fbff-cc65-4d2c-9bf5-22b5af280864", "fromSide": "bottom", "toNode": "ff046729-e7d6-49db-9e4e-c61e0225b263", "toSide": "top"}, {"id": "45ffd3c5-21e6-4df3-9223-58eca04e2aee", "fromNode": "499af946-b1b2-47a2-8bfb-2c0523c79afe", "fromSide": "bottom", "toNode": "ca3467ad-0746-443f-bc65-be92c9dbfa54", "toSide": "top"}, {"id": "601098d0-c6d7-4969-bc35-ef3f081c5b2f", "fromNode": "ca3467ad-0746-443f-bc65-be92c9dbfa54", "fromSide": "bottom", "toNode": "47ea2199-65e2-43ca-808e-bee0d00f4c63", "toSide": "top"}, {"id": "4434f91b-1d2b-4272-a7b9-97b0b2b1bfb6", "fromNode": "ca3467ad-0746-443f-bc65-be92c9dbfa54", "fromSide": "bottom", "toNode": "5f1c763d-7ade-417f-9ce3-45e9ac4f1aa3", "toSide": "top"}, {"id": "5bb3dfa1-501b-462c-a9aa-468e14e5efbc", "fromNode": "5f1c763d-7ade-417f-9ce3-45e9ac4f1aa3", "fromSide": "bottom", "toNode": "bb136ff8-c252-45f1-9dc6-994113daecf2", "toSide": "top"}, {"id": "5259ce38-eb95-462d-92c3-711cc06620fb", "fromNode": "ca3467ad-0746-443f-bc65-be92c9dbfa54", "fromSide": "bottom", "toNode": "44a976f3-b84f-4289-a6d9-40fc5264bcf4", "toSide": "top"}, {"id": "48435fd2-16ff-44f3-b24e-c54e106e31ec", "fromNode": "44a976f3-b84f-4289-a6d9-40fc5264bcf4", "fromSide": "bottom", "toNode": "466d5e20-b18f-46b2-8863-bb33aa6cb604", "toSide": "top"}, {"id": "50084e86-2f98-4dda-a336-42a6e79179b0", "fromNode": "499af946-b1b2-47a2-8bfb-2c0523c79afe", "fromSide": "bottom", "toNode": "ff47b549-83a1-4379-8491-16886bcc0ec5", "toSide": "top"}, {"id": "e2e518f0-36dc-4676-bd0f-fd53de85e681", "fromNode": "ff47b549-83a1-4379-8491-16886bcc0ec5", "fromSide": "bottom", "toNode": "0a7b0ca2-494c-4b45-ada3-66d8fc55f067", "toSide": "top"}, {"id": "26d1451c-6b4f-4c5a-b207-4b0e4668e5c1", "fromNode": "ff47b549-83a1-4379-8491-16886bcc0ec5", "fromSide": "bottom", "toNode": "10a2bce4-313b-4548-a1c1-5da03e42d895", "toSide": "top"}]}
+{
+  "nodes": [
+    {
+      "id": "c87a589b-d3c3-4943-81c9-96272c36eec7",
+      "x": 0,
+      "y": 400,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "4.Data Engineering."
+    },
+    {
+      "id": "07aa1b82-7345-44d7-a235-848f477ca76e",
+      "x": 0,
+      "y": 500,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "# Data Quality and Validation\n\n> [!cite]+ Definition\n> Data quality and validation are essential element of data management and data engineering. Ensuring data quality and validation involves processes that assess, clean, and maintain data to ensure its accuracy, consistency, and reliability.\n\n- Ensuring the accuracy of analysis and decision-making processes. \n- Reducing the risk of errors or bias in data-driven applications. \n- Complying with regulatory and industry standards (e.g., GDPR, HIPAA).\n- Improving the overall reliability and trustworthiness of data.\n\n"
+    },
+    {
+      "id": "563a5889-dc24-4608-8f3f-5150731a234f",
+      "x": 0,
+      "y": 600,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "## Tools\n\n1. **Trifacta**: A data wrangling and data preparation tool for cleaning and structuring data.  \n2. **Great Expectations**: An open-source library for data validation and data quality assurance\n\n\n"
+    },
+    {
+      "id": "f20435e6-3c3e-4828-b57f-bff346fe4325",
+      "x": 0,
+      "y": 600,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "## Data Validation\n\n> [!cite] definition+ \n> Data validation is the process of checking data for errors, inconsistencies, and adherence to predefined rules and constraints. It ensures that data meets specific criteria or standards\n\n"
+    },
+    {
+      "id": "e3886789-447e-4362-84e6-525ba5495603",
+      "x": 0,
+      "y": 700,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "### Key Aspects\n\n1. **Schema Validation**: Ensuring that data adheres to a predefined data model or schema. This includes verifying that data types, formats, and relationships between data elements are correct. \n2. **Cross-field Validation**: Checking for consistency between different data fields or columns, such as verifying that a birthdate is earlier than a current date. \n3. **Business Rules Validation:** Enforcing business-specific rules and constraints on data. For example, ensuring that a product's price falls within a valid price range. \n4. **Format Validation:** Verifying that data adheres to expected formats, such as date formats, phone numbers, or email addresses. \n5. **Referential Integrity Validation:** Ensuring that relationships between data in different tables or datasets are maintained correctly.  \n6. **Data Cleaning:** Identifying and correcting errors, inaccuracies, and inconsistencies in data, which often involves processes like imputation for missing values.\n\n"
+    },
+    {
+      "id": "81d37f91-524c-4b9b-ad83-da441aa62fbe",
+      "x": 0,
+      "y": 600,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "## Data Quality\n\n> [!cite]+ Definition\n> - Data quality refers to the overall health and reliability of data. \n> - High data quality means that the data is accurate, complete, consistent, and relevant for its intended use. \n> - Low data quality may include issues like missing values, inconsistencies, errors, and inaccuracies\n\n"
+    },
+    {
+      "id": "45f88554-acf5-4abe-b754-f3d43940aeba",
+      "x": 0,
+      "y": 700,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "### Key Aspects\n\n1. **Accuracy**: Data should reflect the real-world phenomena it represents, and inaccuracies should be minimized. \n2. **Completeness**: Data should not have missing values, ensuring that all necessary information is present. \n3. **Consistency**: Data should be consistent, meaning that it does not contain conflicting or contradictory information. \n4. **Relevance**: Data should be relevant to the intended purpose, and irrelevant or redundant data should be minimized. \n5. **Timeliness**: Data should be up-to-date and reflect the most recent information, where relevant. \n6. **Validity**: Data should conform to defined rules and constraints. For example, dates should follow a specific format. \n7. **Reliability**: Data should be reliable and dependable, meaning that it can be used with confidence\n\n"
+    },
+    {
+      "id": "e872d309-8321-4639-bbe6-b62f875ebbf1",
+      "x": 0,
+      "y": 500,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "# Data Processing\n\n> [!cite]+ Definition\n> Data processing refers to the application of various operations, calculations, and transformations to data to extract valuable insights or perform specific tasks. \n> Data processing can be carried out using different methods, depending on the nature of the data and the goals of analysis\n\n\n"
+    },
+    {
+      "id": "969aacf0-bb17-4d2d-87f5-d3588ae82aaa",
+      "x": 0,
+      "y": 600,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "## Key Aspects\n\n1.  **ETL (Extract, Transform, Load):** In the context of data processing, ETL refers to the process of extracting data from source systems, transforming it to meet specific requirements, and loading it into a target system or data warehouse. \n2. **Data Filtering**: Selecting a subset of data based on specific criteria, such as time intervals or data quality, to reduce the volume of data for analysis. \n3. **Data Aggregation and Summarization:** Creating summaries or aggregations of data, which can be used for reporting, dashboards, or to reduce data complexity.  \n4. **Statistical Analysis:** Applying statistical methods to uncover patterns, correlations, and trends in the data. \n5. **Machine Learning**: Implementing machine learning algorithms for tasks like predictive modeling, classification, clustering, and anomaly detection. \n6. **Real-time Processing**: Processing data as it arrives (streaming data) for real-time analytics, monitoring, and decision-makin\n\n"
+    },
+    {
+      "id": "dc1ffbf4-0087-4ce5-a4a1-fe407ab5f3c2",
+      "x": 0,
+      "y": 500,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "# Data Transformation\n\n> [!cite]+ Definition\n> Data transformation and processing are crucial steps in the data engineering pipeline, where raw data is converted, cleaned, and prepared for analysis or other downstream tasks. These processes are essential to ensure that data is in a usable format and that it meets quality and consistency standards\n\n\n"
+    },
+    {
+      "id": "a7580506-1272-4fd3-828c-501c1637b9f7",
+      "x": 0,
+      "y": 600,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "## Tools\n\n1. **Apache Spark**: A powerful open-source data processing framework for batch and real-time data processing, machine learning, and graph processing. \n2. **Apache Flink**: A stream processing framework for big data processing with low latency and high throughput.\n3. **Apache Beam**: An open-source, unified model for defining both batch and stream data processing pipelines. \n4. **Python Libraries**: Tools like Pandas, NumPy, and Dask are widely used for data manipulation and analysis\n"
+    },
+    {
+      "id": "cb741baa-9334-4107-978a-592dd18544fa",
+      "x": 0,
+      "y": 600,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "## Key Aspects\n1. **Data Cleaning**: Identifying and handling missing values, outliers, and errors to ensure data quality. Common techniques include imputation, removal, and correction.\n2. **Data Standardization:** Bringing data into a consistent format, such as converting date formats, units of measurement, or text casing.\n3. **Data Enrichment**: Enhancing data by adding additional information, such as geocoding addresses to obtain latitude and longitude coordinates or merging data from different sources to create more comprehensive datasets\n4. **Data Aggregation**: Summarizing and condensing data to reduce its volume while retaining its essential information. Aggregation may involve grouping data by specific attributes or time intervals.\n5. **Data Encoding**: Converting categorical data into numerical representations, which is often necessary for machine learning algorithms. Common techniques include one-hot encoding, label encoding, and target encoding\n6. **Data Integration**: Combining data from various sources or databases to create unified datasets for analysis. This process may involve resolving schema conflicts and data reconciliation.\n7. **Feature Engineering**: Creating new features or variables from existing data to improve model performance in machine learning or data analysis. This can include mathematical transformations, scaling, and feature extraction\n\n"
+    },
+    {
+      "id": "72169507-bc15-41a7-a76f-64333cb1f9dc",
+      "x": 0,
+      "y": 500,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "# Data Storage and Management\n\n\n> [!cite]+ Definition\n> Data storage and management are integral components of data engineering and involve the \n> - storage\n> - organization\n> - and handling of data \n> to ensure it is readily \n> - accessible\n> - secure\n> - efficiently managed for various data-related activities\n\n\n"
+    },
+    {
+      "id": "4ae1245e-068f-447f-9d7c-83e75d33154c",
+      "x": 0,
+      "y": 600,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "## Data Management\n\n> [!cite]+ Definition\n> Data management encompasses the processes and practices that enable the efficient organization, cataloging, and maintenance of data. It ensures that data is well-maintained and easily accessible for various data-related tasks\n\n"
+    },
+    {
+      "id": "923732ff-0c35-49d8-9e94-226a9105293a",
+      "x": 0,
+      "y": 700,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "### Tools\n1. **Apache Atlas**: An open-source metadata and governance platform for data lakes. \n2. **Collibra:** A data governance and cataloging platform for managing and curating data assets\n\n\n\n"
+    },
+    {
+      "id": "a37198af-0370-48c3-abbc-ad0d90ea7425",
+      "x": 0,
+      "y": 700,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "### Key Aspects\n1. **Data Cataloging**\n2. **Data Governance**\n3. **Data Lifecycle Management**\n4. **Data Versioning**\n5. **Data Quality Management**\n6. **Data Retrieval and Access Control**\n7. **Data Documentation**\n8. **Data Compliance**\n\n"
+    },
+    {
+      "id": "690ba486-98d9-42dc-8efc-b32621e3f2df",
+      "x": 0,
+      "y": 600,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "## Data Storage\n> [!cite]+ Definition\n> - Data storage refers to the physical or digital locations where data is stored.\n> - Encompasses the selection of appropriate storage systems and technologies\n> - as well as the strategies for storing data efficiently and securely.\n\n\n"
+    },
+    {
+      "id": "4b2a44da-6ccc-45da-b663-da20554f0c0d",
+      "x": 0,
+      "y": 700,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "### Tools\n1. **Relational Database Management Systems (RDBMS)**: Tools like MySQL, PostgreSQL, and Microsoft SQL Server are commonly used for structured data storage.  \n2. **NoSQL Databases:** Technologies like MongoDB, Cassandra, and Redis are used for flexible and scalable storage of unstructured or semi-structured data. \n3. **Hadoop Distributed File System (HDFS):** A distributed file system that stores data across clusters and is part of the Hadoop ecosystem.  \n4. **Amazon S3**: An object storage service provided by AWS, often used as a data lake for storing large volumes of data\n\n"
+    },
+    {
+      "id": "ef2883ff-05dd-42f7-859c-9224529d41ae",
+      "x": 0,
+      "y": 700,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "### Key Aspects\n1. **Data Storage Solutions**: Choosing the right storage solutions based on data types and needs. This can include relational databases, NoSQL databases, data warehouses, data lakes, cloud storage, and more.\n2. **Scalability**: Ensuring that the chosen storage solution can handle the volume of data and is scalable to accommodate future growth.\n3. **Performance**: Optimizing data storage for quick retrieval and access, including strategies like indexing and caching\n4. **Data Replication and Backup**: Implementing data replication and backup strategies to ensure data availability and recovery in case of hardware failures or data loss.\n5. **Data Security**: Implementing security measures, including access controls, encryption, and authentication, to protect data from unauthorized access or breaches.\n6. **Data Partitioning**: Partitioning large datasets to improve query performance and data management.\n\n"
+    },
+    {
+      "id": "48437761-b1a9-4da8-b88f-7c96c8e5b8dd",
+      "x": 0,
+      "y": 500,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "# Data Ingestion and Collection\n\n\n> [!cite]+ Definition \n> Data ingestion and collection are fundamental processes m the field of data engineering, Involving the acquisition of data from various sources and the initial storage of that data for further processing and analysis\n\n"
+    },
+    {
+      "id": "39ebcdc8-a522-4ea7-a7cf-f88ed3bae670",
+      "x": 0,
+      "y": 600,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "## Tools\n1. **Apache Kafka**\n2. **Apache Flume**\n3. **Logstash**\n4. **AWS Data Pipeline**\n\n"
+    },
+    {
+      "id": "ad36bae4-bf0e-4bfa-bcab-3e8c78141784",
+      "x": 0,
+      "y": 600,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "## Data Collection\n\n> [!cite]+ Definition\n> Data collection is the broader process of gathering data from a variety of sources. The initial step of acquiring data before it undergoes any transformation or processing\n\n"
+    },
+    {
+      "id": "2783677d-8935-4a77-854d-988ee5420975",
+      "x": 0,
+      "y": 700,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "### Key Sources\n\n1. **Source Diversity**: Data can be collected from a multitude of sources, including databases, external APIs, web scraping, social media, sensors, log files, and more.\n2. **Data Types**: : Data collected can come in various forms, such as structured data (e.g., databases), semi-structured data (e.g., JSON), and unstructured data (e.g., text, images, videos).\n3. **Sampling**: Data collection may involve random sampling or systematic data collection methods, depending on the research or analytical goals.\n4. **Data Volume**: The volume of data collected can vary widely, from small datasets to big data, and even massive datasets in the case of organizations dealing with large-scale data\n\n"
+    },
+    {
+      "id": "0d9ef33b-61d5-42ce-825a-2c74df57cd69",
+      "x": 0,
+      "y": 600,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "## Data Ingestion\n\n> [!cite]+ Definition \n> Data ingestion refers to the process of acquiring and importing data from a wide range of sources into a data storage or processing system.\n> involves extracting data from its source, transforming it into a suitable format, and loading it into a target storage or processing system.\n\n"
+    },
+    {
+      "id": "978cdb0f-a410-4edc-9ac6-59825df84067",
+      "x": 0,
+      "y": 700,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "### Key Aspects\n1. **Extraction**: Data is retrieved from source systems, which can include databases, web services, application logs, IoT devices, and more.\n2. **Transformation:** : Data may need to be cleaned, standardized, or reformatted to ensure uniformity and quality.\n3. **Loading:** The transformed data is then loaded into a target system, such as a data warehouse, data lake, or a real-time processing pipeline.\n4. **Batch vs Real-time:** Data can be ingested in batches, where data is collected and processed at specified intervals, or in real-time, where data is collected and processed as it arrive\n5. **Error Handling:** Data ingestion processes must handle errors and exceptions, ensuring that data is ingested completely and accurately.\n\n\n\n"
+    },
+    {
+      "id": "91dd62a1-915c-4762-8204-15e66c441520",
+      "x": 0,
+      "y": 500,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "# Data Engineering\n\n> [!cite]+  Definition\n> Field of study and practice of\n> 1. collection\n> 2. transformation\n> 3. storage\n> 4. management \n> of data in order to make it accessible, reliable and usable for various applications and processes\n\n \n\n\n"
+    },
+    {
+      "id": "f9fe3b5c-c772-4198-91b8-7ab1da711a79",
+      "x": 0,
+      "y": 600,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "## Role of Data Engineer\n\n> Responsible for **designing and building the infrastructure** and systems that enable the efficient and effective handling of data within an organization\n\n"
+    },
+    {
+      "id": "760c426d-32bb-48a8-836f-619333d2f757",
+      "x": 0,
+      "y": 600,
+      "width": 400,
+      "height": 400,
+      "type": "text",
+      "text": "## Key Aspects\n\n1. **Data Collection**: Responsible for collecting data from a wide range of sources (databases, logs, APIs and more). Also includes setting up data pipelines for ingestion\n2. **Data Transformation**:Data often needs to be cleaned, standardized, and transformed into a usable format. Data engineers perform these transformations using ETL (Extract, Transform, Load) processes to ensure data quality\n3. **Data Storage**: Data engineers select appropriate storage solutions, such as relational databases, NoSQL databases, data lakes, or cloud storage, to store the data securely and efficiently.\n4. **Data Management**: Data must be organized and cataloged to facilitate its retrieval and usage. Data engineers design and implement data management strategies and metadata systems.\n5. **Data Quality and Validation**: Data engineers are responsible for ensuring that data is accurate, complete, and consistent. They implement data validation and quality control processes to identify and rectify errors or discrepancies\n6. **Data Pipelines**: Data engineering involves the creation of data pipelines, which are automated processes that move and transform data from source to destination, making it ready for analysis and other downstream applications\n7. **Data Governance**: Data governance policies and practices are established to ensure that data is used responsibly and complies with regulatory requirements. Data engineers play a role in implementing data governance frameworks.\n8. **Data Security**: Maintaining the security and privacy of data is a paramount concern. Data engineers implement access controls, encryption, and other security measures to protect sensitive data\n9. **Scalability and Performance**: : Data engineers must design systems that can handle large volumes of data and are scalable to meet the organization's growing needs. Performance optimization is crucial for efficient data processing\n10. **Tools and Technologies**: Data engineers use a variety of tools and technologies, including database management systems, ETL tools, big data frameworks, and cloud services, to carry out their tasks\n\n"
+    }
+  ],
+  "edges": [
+    {
+      "id": "2b5f0f14-5af2-4a04-9df7-405b8a33d988",
+      "fromNode": "c87a589b-d3c3-4943-81c9-96272c36eec7",
+      "fromSide": "bottom",
+      "toNode": "07aa1b82-7345-44d7-a235-848f477ca76e",
+      "toSide": "top"
+    },
+    {
+      "id": "fd05eb4e-688c-457d-8de4-fd8b992cbf1b",
+      "fromNode": "07aa1b82-7345-44d7-a235-848f477ca76e",
+      "fromSide": "bottom",
+      "toNode": "563a5889-dc24-4608-8f3f-5150731a234f",
+      "toSide": "top"
+    },
+    {
+      "id": "c9368dfc-38c2-4e57-8a54-5b04bc87519b",
+      "fromNode": "07aa1b82-7345-44d7-a235-848f477ca76e",
+      "fromSide": "bottom",
+      "toNode": "f20435e6-3c3e-4828-b57f-bff346fe4325",
+      "toSide": "top"
+    },
+    {
+      "id": "ce5b6789-0e69-4556-9689-ab0f01394f83",
+      "fromNode": "f20435e6-3c3e-4828-b57f-bff346fe4325",
+      "fromSide": "bottom",
+      "toNode": "e3886789-447e-4362-84e6-525ba5495603",
+      "toSide": "top"
+    },
+    {
+      "id": "e51df434-694c-4717-aa9c-255eb9599738",
+      "fromNode": "07aa1b82-7345-44d7-a235-848f477ca76e",
+      "fromSide": "bottom",
+      "toNode": "81d37f91-524c-4b9b-ad83-da441aa62fbe",
+      "toSide": "top"
+    },
+    {
+      "id": "63a8de44-f9e9-4010-9eed-0cb863cb47af",
+      "fromNode": "81d37f91-524c-4b9b-ad83-da441aa62fbe",
+      "fromSide": "bottom",
+      "toNode": "45f88554-acf5-4abe-b754-f3d43940aeba",
+      "toSide": "top"
+    },
+    {
+      "id": "10a6c61e-9484-4522-afb7-304648d0cd69",
+      "fromNode": "c87a589b-d3c3-4943-81c9-96272c36eec7",
+      "fromSide": "bottom",
+      "toNode": "e872d309-8321-4639-bbe6-b62f875ebbf1",
+      "toSide": "top"
+    },
+    {
+      "id": "6d4a5e54-c60d-4e1f-9268-1348fcc7171a",
+      "fromNode": "e872d309-8321-4639-bbe6-b62f875ebbf1",
+      "fromSide": "bottom",
+      "toNode": "969aacf0-bb17-4d2d-87f5-d3588ae82aaa",
+      "toSide": "top"
+    },
+    {
+      "id": "9c70b852-f116-4650-859a-77f28362fe9a",
+      "fromNode": "c87a589b-d3c3-4943-81c9-96272c36eec7",
+      "fromSide": "bottom",
+      "toNode": "dc1ffbf4-0087-4ce5-a4a1-fe407ab5f3c2",
+      "toSide": "top"
+    },
+    {
+      "id": "fa0d4b15-cce4-4fd0-88b6-ea312d973b07",
+      "fromNode": "dc1ffbf4-0087-4ce5-a4a1-fe407ab5f3c2",
+      "fromSide": "bottom",
+      "toNode": "a7580506-1272-4fd3-828c-501c1637b9f7",
+      "toSide": "top"
+    },
+    {
+      "id": "6d1edf44-ff6d-4dcd-83c7-a13671d54253",
+      "fromNode": "dc1ffbf4-0087-4ce5-a4a1-fe407ab5f3c2",
+      "fromSide": "bottom",
+      "toNode": "cb741baa-9334-4107-978a-592dd18544fa",
+      "toSide": "top"
+    },
+    {
+      "id": "bba285e7-7040-451f-9d05-0256698b3167",
+      "fromNode": "c87a589b-d3c3-4943-81c9-96272c36eec7",
+      "fromSide": "bottom",
+      "toNode": "72169507-bc15-41a7-a76f-64333cb1f9dc",
+      "toSide": "top"
+    },
+    {
+      "id": "e24ee966-cac2-4ab8-a66a-fc54e33539b0",
+      "fromNode": "72169507-bc15-41a7-a76f-64333cb1f9dc",
+      "fromSide": "bottom",
+      "toNode": "4ae1245e-068f-447f-9d7c-83e75d33154c",
+      "toSide": "top"
+    },
+    {
+      "id": "9286601f-5d1d-4dae-8163-a705a5410d79",
+      "fromNode": "4ae1245e-068f-447f-9d7c-83e75d33154c",
+      "fromSide": "bottom",
+      "toNode": "923732ff-0c35-49d8-9e94-226a9105293a",
+      "toSide": "top"
+    },
+    {
+      "id": "18e5bde3-d6b4-42bc-b96c-4e8de7257eb9",
+      "fromNode": "4ae1245e-068f-447f-9d7c-83e75d33154c",
+      "fromSide": "bottom",
+      "toNode": "a37198af-0370-48c3-abbc-ad0d90ea7425",
+      "toSide": "top"
+    },
+    {
+      "id": "1f7a95f9-6065-473f-8852-9433ca852fd5",
+      "fromNode": "72169507-bc15-41a7-a76f-64333cb1f9dc",
+      "fromSide": "bottom",
+      "toNode": "690ba486-98d9-42dc-8efc-b32621e3f2df",
+      "toSide": "top"
+    },
+    {
+      "id": "7f79014d-38da-4359-86b7-652f818d945f",
+      "fromNode": "690ba486-98d9-42dc-8efc-b32621e3f2df",
+      "fromSide": "bottom",
+      "toNode": "4b2a44da-6ccc-45da-b663-da20554f0c0d",
+      "toSide": "top"
+    },
+    {
+      "id": "639e1ae1-197b-4b81-9382-45ae59753100",
+      "fromNode": "690ba486-98d9-42dc-8efc-b32621e3f2df",
+      "fromSide": "bottom",
+      "toNode": "ef2883ff-05dd-42f7-859c-9224529d41ae",
+      "toSide": "top"
+    },
+    {
+      "id": "53f26196-5223-4e87-874b-ba46773fa931",
+      "fromNode": "c87a589b-d3c3-4943-81c9-96272c36eec7",
+      "fromSide": "bottom",
+      "toNode": "48437761-b1a9-4da8-b88f-7c96c8e5b8dd",
+      "toSide": "top"
+    },
+    {
+      "id": "1c9c10f9-ee5f-4046-adf9-07b3e1813bb3",
+      "fromNode": "48437761-b1a9-4da8-b88f-7c96c8e5b8dd",
+      "fromSide": "bottom",
+      "toNode": "39ebcdc8-a522-4ea7-a7cf-f88ed3bae670",
+      "toSide": "top"
+    },
+    {
+      "id": "4051bcb7-1e34-4130-bf9d-89e590449459",
+      "fromNode": "48437761-b1a9-4da8-b88f-7c96c8e5b8dd",
+      "fromSide": "bottom",
+      "toNode": "ad36bae4-bf0e-4bfa-bcab-3e8c78141784",
+      "toSide": "top"
+    },
+    {
+      "id": "951fa153-7983-4fac-a9f1-5db424e39970",
+      "fromNode": "ad36bae4-bf0e-4bfa-bcab-3e8c78141784",
+      "fromSide": "bottom",
+      "toNode": "2783677d-8935-4a77-854d-988ee5420975",
+      "toSide": "top"
+    },
+    {
+      "id": "849a37e9-cd6f-4e4e-8846-47532fe6b3bc",
+      "fromNode": "48437761-b1a9-4da8-b88f-7c96c8e5b8dd",
+      "fromSide": "bottom",
+      "toNode": "0d9ef33b-61d5-42ce-825a-2c74df57cd69",
+      "toSide": "top"
+    },
+    {
+      "id": "0aac42d0-4a05-4a85-9002-49cbdf275f0d",
+      "fromNode": "0d9ef33b-61d5-42ce-825a-2c74df57cd69",
+      "fromSide": "bottom",
+      "toNode": "978cdb0f-a410-4edc-9ac6-59825df84067",
+      "toSide": "top"
+    },
+    {
+      "id": "c2860851-3cd1-4e59-b50e-fe87a1150f87",
+      "fromNode": "c87a589b-d3c3-4943-81c9-96272c36eec7",
+      "fromSide": "bottom",
+      "toNode": "91dd62a1-915c-4762-8204-15e66c441520",
+      "toSide": "top"
+    },
+    {
+      "id": "f824b770-b198-4c4e-aef2-ce66c62319e6",
+      "fromNode": "91dd62a1-915c-4762-8204-15e66c441520",
+      "fromSide": "bottom",
+      "toNode": "f9fe3b5c-c772-4198-91b8-7ab1da711a79",
+      "toSide": "top"
+    },
+    {
+      "id": "ddfda54a-cd22-4ab7-87ed-3067a82e18b6",
+      "fromNode": "91dd62a1-915c-4762-8204-15e66c441520",
+      "fromSide": "bottom",
+      "toNode": "760c426d-32bb-48a8-836f-619333d2f757",
+      "toSide": "top"
+    }
+  ]
+}
