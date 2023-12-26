@@ -1,67 +1,16 @@
 import uuid
 import os
 import json
+from node import Node
 file_path = './media/4.Data Engineering.md'
 
-class Node:
-    def __init__(self,string,level,file_name):
-        self.level = level
-        self.string = string
-        self.file_name = file_name[:-3] # dropping extension
-        self.uuid = str(uuid.uuid4())
-        self.title_content = self.string[self.level+1:-1] # ignoring #, ## etc and the final newline
-        
-        self.x = 0
-        self.y = (self.level * 500) + 400
-        self.obsidian_json = {
-            "id":self.uuid,
-            "x":self.x,
-            "y":self.y,
-            "width":400,
-            "height":400,
-            "type":'text',
-            "text":self.string
-        }
-
-        self.children = []
-    
-    def modify_node_string(self,new_string):
-        self.string = new_string
-        self.obsidian_json['text'] = self.string
-    
-    def add_children(self,child_node):
-        
-        if child_node.level == self.level + 1:
-            self.children.append(child_node)
-        else:
-            pass
-    
-    def __repr__(self,with_content=False):
-
-        string = ''
-        indent="\t"*self.level
-        string += f'{indent}Level: {self.level} Content: {self.title_content}'
-
-        if with_content:
-            string += '\n'+indent+self.string
-
-        return string   
-    
-    def __str__(self):
-
-        return self.__repr__()
-
-    def modify_position(self,x,y):
-        
-        self.obsidian_json['x'] = x
-        self.obsidian_json['y'] = y
-        
 class Tree:
     def __init__(self,file_path):
         self.file_name = os.path.basename(file_path)
         self.file_path = file_path
-        self.root_node = self.construct_tree()
         self.canvas_json = {"nodes":[],	"edges":[] }
+        self.max_depth_level = 0
+        self.root_node = self.construct_tree()
         
     def get_file(self):
         file_path = self.file_path
@@ -105,29 +54,27 @@ class Tree:
         for line in all_lines:
 
             level = self.classify_header(line)
-            count = 0
             if level > 0:
                 node = Node(line,level,file_name)
                 
-                if count < 5:
-                    print(node.y)
                 nodes.append(node)
                 current_node = node
             else:
                 if current_node != None:
-                    # print(current_node)
+
                     new_string = current_node.string + line
                     current_node.modify_node_string(new_string)
             
         return nodes
 
-    @staticmethod
-    def _construct_tree(node_list):
+    def _construct_tree(self,node_list):
     
         for idx in range(len(node_list)-1,0,-1):
             
             # taking node, find the parent and the append the node to the parent.
             node = node_list[idx]
+            self.max_depth_level = max(self.max_depth_level,node.level)
+            
             for candidate_idx in range(idx,-1,-1):
                 candidate_node = node_list[candidate_idx]
                 
@@ -159,12 +106,9 @@ class Tree:
                          "toSide":"top"}
             self.canvas_json['edges'].append(edge_dict)
             
-            print(child_node.title_content)
-            print(child_node.children)
             if len(child_node.children) > 0:
                 self._connect_edges(child_node)
 
-        
 
 def print_tree(node):
 
@@ -194,7 +138,9 @@ if __name__ == "__main__":
 
     print()
     print()
-    print_tree(tree.root_node)
+    print(tree.max_depth_level)
+    # print_tree(tree.root_node)
+
     
     
     
