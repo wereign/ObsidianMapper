@@ -1,11 +1,15 @@
+from icecream import ic
 import uuid
 import os
 import json
 from node import Node
-file_path = './media/4.Data Engineering.md'
+
+
+nexts =[0]*4 # hardcoded max depth level for now
 
 class Tree:
     def __init__(self,file_path):
+
         self.file_name = os.path.basename(file_path)
         self.file_path = file_path
         self.canvas_json = {"nodes":[],	"edges":[] }
@@ -25,8 +29,8 @@ class Tree:
         tree_node = self._construct_tree(all_nodes)
 
         return tree_node  
-    @staticmethod
 
+    @staticmethod
     def classify_header(line):   
         h1_id = '# '
         h2_id = '## '
@@ -50,6 +54,7 @@ class Tree:
         root_node = Node(root_node_content,0,file_name)
         nodes = [root_node]
 
+        
         current_node = None
         for line in all_lines:
 
@@ -60,8 +65,9 @@ class Tree:
                 nodes.append(node)
                 current_node = node
             else:
-                if current_node != None:
-
+                # the line is not a level changing line, append it to current node if it exists.
+                if current_node != None:   
+                    
                     new_string = current_node.string + line
                     current_node.modify_node_string(new_string)
             
@@ -85,18 +91,18 @@ class Tree:
     
         return node_list[0]
 
-    def construct_cards(self,node):
+    def obsidian_construct_cards(self,node):
         
         self.canvas_json['nodes'].append(node.obsidian_json)
         children_nodes = node.children
 
         if len(children_nodes) > 0:
             for child in children_nodes:
-                self.construct_cards(child)
+                self.obsidian_construct_cards(child)
         
         return self.canvas_json
 
-    def _connect_edges(self,node):
+    def _obsidian_connect_edges(self,node):
 
         for child_node in node.children:
             edge_dict = {"id":str(uuid.uuid4()),
@@ -107,17 +113,32 @@ class Tree:
             self.canvas_json['edges'].append(edge_dict)
             
             if len(child_node.children) > 0:
-                self._connect_edges(child_node)
+                self._obsidian_connect_edges(child_node)
+
+    @staticmethod
+    def assign_x(node):
+        global nexts 
+
+        level = node.level
+        node.modify_x(nexts[level] * 700)
+        ic(level,nexts[level])        
+        nexts[level] += 1
+        ic(level,nexts[level])        
+        print()
+
+        for c in node.children:
+            Tree.assign_x(c)
+        
+
+
+
+
 
 
 def print_tree(node):
-
-    print(node.title_content)
-
+    print(node)
     if len(node.children) > 0:
-
         for child in node.children:
-            
             print_tree(child)
     else:
         pass
@@ -126,21 +147,24 @@ def print_tree(node):
 
 if __name__ == "__main__":
     
+    file_path = './media/4.Data Engineering.md'
     tree = Tree(file_path)
-    tree.construct_cards(tree.root_node)
-    tree._connect_edges(tree.root_node)
+    tree.obsidian_construct_cards(tree.root_node)
+    tree._obsidian_connect_edges(tree.root_node)
     
     # print(tree.canvas_json)
+    tree.assign_x(tree.root_node)
 
-    canvas_path = r"C:\Users\viren\Documents\Obsidian Vault\Archive\Semester V\Principles of Data Science & Engineering\some_file_y_fixed.canvas"
+    canvas_path = r"C:\Users\viren\Documents\Obsidian Vault\Archive\Semester V\Principles of Data Science & Engineering\april_2024.canvas"
     with open(canvas_path,'w') as json_file:
         json.dump(tree.canvas_json,json_file)
 
     print()
-    print()
-    print(tree.max_depth_level)
-    # print_tree(tree.root_node)
+    print_tree(tree.root_node)
 
+    print()
+    # tree.parent_over_child(tree.root_node)
+    print_tree(tree.root_node)
     
     
     
