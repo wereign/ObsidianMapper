@@ -8,6 +8,7 @@ class Node:
         
         # Node Configuration
         self.level = level
+        self.depth = level
         self.children = []
         self.mod = 0
         self.x = 0
@@ -67,3 +68,6 @@ class Node:
         """Modifying the x axis value for the card"""
         self.x = x
         self.obsidian_json['x'] = x
+
+    def reflect_x(self):
+        self.obsidian_json['x'] = self.x * 500

@@ -3,8 +3,7 @@ import uuid
 import os
 import json
 from node import Node
-
-
+from paper import buchheim
 nexts =[0]*4 # hardcoded max depth level for now
 
 class Tree:
@@ -29,24 +28,6 @@ class Tree:
         tree_node = self._construct_tree(all_nodes)
 
         return tree_node  
-
-    @staticmethod
-    def classify_header(line):   
-        h1_id = '# '
-        h2_id = '## '
-        h3_id = '### '
-
-        if line[:len(h1_id)] == h1_id:
-            return 1
-
-        elif line[:len(h2_id)] == h2_id:
-            return 2
-
-        elif line[:len(h3_id)] == h3_id:
-            return 3
-
-        else:
-            return -1 # using 0 as file node level.
 
     def create_nodes_list(self,all_lines,file_name):
 
@@ -91,9 +72,18 @@ class Tree:
     
         return node_list[0]
 
-    def obsidian_construct_cards(self,node):
+    def obsidian_construct_cards(self,node:Node):
         
-        self.canvas_json['nodes'].append(node.obsidian_json)
+        # print("Appending", node.obsidian_json['x'], node.obsidian_json['y'])
+        print()
+        print("Before")
+        print(node.tree.obsidian_json['x'])
+        node.tree.modify_x(node.x*500)
+        print("After")
+        print(node.tree.obsidian_json['x'])
+        
+        self.canvas_json['nodes'].append(node.tree.obsidian_json)
+        
         children_nodes = node.children
 
         if len(children_nodes) > 0:
@@ -102,13 +92,13 @@ class Tree:
         
         return self.canvas_json
 
-    def _obsidian_connect_edges(self,node):
+    def _obsidian_connect_edges(self,node:Node)->None:
 
         for child_node in node.children:
             edge_dict = {"id":str(uuid.uuid4()),
-                         "fromNode":node.uuid,
+                         "fromNode":node.tree.uuid,
                          "fromSide":"bottom",
-                         "toNode":child_node.uuid,
+                         "toNode":child_node.tree.uuid,
                          "toSide":"top"}
             self.canvas_json['edges'].append(edge_dict)
             
@@ -116,19 +106,30 @@ class Tree:
                 self._obsidian_connect_edges(child_node)
 
     @staticmethod
-    def assign_x(node):
-        global nexts 
+    def classify_header(line:str) -> int :   
+        """Classify the level of the markdown header
 
-        level = node.level
-        node.modify_x(nexts[level] * 700)
-        ic(level,nexts[level])        
-        nexts[level] += 1
-        ic(level,nexts[level])        
-        print()
+        Args:
+            line (str): The line to be parsed
 
-        for c in node.children:
-            Tree.assign_x(c)
-        
+        Returns:
+            int: integer describing the heading level 
+        """
+        h1_id = '# '
+        h2_id = '## '
+        h3_id = '### '
+
+        if line[:len(h1_id)] == h1_id:
+            return 1
+
+        elif line[:len(h2_id)] == h2_id:
+            return 2
+
+        elif line[:len(h3_id)] == h3_id:
+            return 3
+
+        else:
+            return -1 # using 0 as file node level.
 
 
 
@@ -143,30 +144,70 @@ def print_tree(node):
     else:
         pass
             
+def poc_verify(node: Node):
+
+    final_x = node.x
+    # print()
+    # print('Initial Obsidian JSON X Value: ', node.obsidian_json['x'])
+    node.modify_x(final_x * 500)
+    children_nodes = node.children
+    # print('Final Obsidian JSON X Value: ', node.obsidian_json['x'])
+
+    if node.level == 2:
+        print("Level 2")
+        print(node.title_content)
+        print([i.title_content for i in children_nodes])
+        for child in children_nodes:
+            print(child.title_content,'\t',node.x,node.obsidian_json['x'])
+
+
+        print()
+    if len(children_nodes) > 0:
+
+        
+        for child in children_nodes:
+            poc_verify(child)
+
+                
+
 
 
 if __name__ == "__main__":
     
     file_path = './media/4.Data Engineering.md'
     tree = Tree(file_path)
-    tree.obsidian_construct_cards(tree.root_node)
-    tree._obsidian_connect_edges(tree.root_node)
     
-    # print(tree.canvas_json)
-    tree.assign_x(tree.root_node)
+    
+    
+    # # print(tree.canvas_json)
+    # tree.assign_x(tree.root_node)
 
-    canvas_path = r"C:\Users\viren\Documents\Obsidian Vault\Archive\Semester V\Principles of Data Science & Engineering\april_2024.canvas"
+
+    # print()
+    # print_tree(tree.root_node)
+
+    # print()
+    # # tree.parent_over_child(tree.root_node)
+    # print_tree(tree.root_node)
+    
+    # print_tree(tree.root_node)
+    
+    
+    print('------------------------------------------------')
+    painted_root_node = buchheim(tree.root_node)
+    
+
+
+    
+
+    print_tree(painted_root_node)    
+    
+    tree.obsidian_construct_cards(painted_root_node)
+    tree._obsidian_connect_edges(painted_root_node)
+    
+    
+    canvas_path = r"C:\Users\viren\Documents\Obsidian Vault\Archive\Semester V\Principles of Data Science & Engineering\june_2_2024.canvas"
     with open(canvas_path,'w') as json_file:
         json.dump(tree.canvas_json,json_file)
-
-    print()
-    print_tree(tree.root_node)
-
-    print()
-    # tree.parent_over_child(tree.root_node)
-    print_tree(tree.root_node)
-    
-    
-    
     
     
