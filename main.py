@@ -73,7 +73,7 @@ class Tree:
             
         return nodes
 
-    def _construct_tree(self,node_list):
+    def _construct_tree(self,node_list):    
     
         for idx in range(len(node_list)-1,0,-1):
             
