@@ -1,52 +1,5 @@
-class DrawTree(object):
-    def __init__(self, tree, parent=None, depth=0, number=1):
-        self.x = -1.0
-        self.y = depth
-        self.tree = tree
-        self.children = [
-            DrawTree(c, self, depth + 1, i + 1) for i, c in enumerate(tree.children)
-        ]
-        self.parent = parent
-        self.thread = None
-        self.mod = 0
-        self.ancestor = self
-        self.change = self.shift = 0
-        self._lmost_sibling = None
-        # this is the number of the node in its group of siblings 1..n
-        self.number = number
-
-    def left(self):
-        return self.thread or len(self.children) and self.children[0]
-
-    def right(self):
-        return self.thread or len(self.children) and self.children[-1]
-
-    def lbrother(self):
-        n = None
-        if self.parent:
-            for node in self.parent.children:
-                if node == self:
-                    return n
-                else:
-                    n = node
-        return n
-
-    def get_lmost_sibling(self):
-        if not self._lmost_sibling and self.parent and self != self.parent.children[0]:
-            self._lmost_sibling = self.parent.children[0]
-        return self._lmost_sibling
-
-    lmost_sibling = property(get_lmost_sibling)
-
-    def __str__(self):
-        return "%s: x=%s mod=%s" % (self.tree, self.x, self.mod)
-
-    def __repr__(self):
-        return self.__str__()
-
-
 def buchheim(tree):
-    dt = firstwalk(DrawTree(tree))
+    dt = firstwalk(tree)
     print('doing second walk')
     min = second_walk(dt)
     if min < 0:
@@ -71,7 +24,7 @@ def firstwalk(v, distance=1.0):
         for w in v.children:
             firstwalk(w)
             default_ancestor = apportion(w, default_ancestor, distance)
-        print("finished v =", v.tree, "children")
+        # print("finished v =", v.tree, "children")
         execute_shifts(v)
 
         midpoint = (v.children[0].x + v.children[-1].x) / 2
@@ -98,6 +51,7 @@ def apportion(v, default_ancestor, distance):
         sir = sor = v.mod
         sil = vil.mod
         sol = vol.mod
+
         while vil.right() and vir.left():
             vil = vil.right()
             vir = vir.left()
@@ -126,8 +80,8 @@ def apportion(v, default_ancestor, distance):
 
 def move_subtree(wl, wr, shift):
     subtrees = wr.number - wl.number
-    print(wl.tree, "is conflicted with", wr.tree,
-          "moving", subtrees, "shift", shift)
+    # print(wl.tree, "is conflicted with", wr.tree,
+    #       "moving", subtrees, "shift", shift)
     # print wl, wr, wr.number, wl.number, shift, subtrees, shift/subtrees
     wr.change -= shift / subtrees
     wr.shift += shift

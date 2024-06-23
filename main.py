@@ -32,7 +32,7 @@ class Tree:
     def create_nodes_list(self,all_lines,file_name):
 
         root_node_content = file_name[:-2]
-        root_node = Node(root_node_content,0,file_name)
+        root_node = Node(root_node_content,0)
         nodes = [root_node]
 
         
@@ -54,35 +54,59 @@ class Tree:
             
         return nodes
 
-    def _construct_tree(self,node_list):    
+    # def _construct_tree(self,node_list):    
     
-        for idx in range(len(node_list)-1,0,-1):
+    #     for idx in range(len(node_list)-1,0,-1):
             
-            # taking node, find the parent and the append the node to the parent.
-            node = node_list[idx]
-            self.max_depth_level = max(self.max_depth_level,node.level)
+    #         # taking node, find the parent and the append the node to the parent.
+    #         node = node_list[idx]
+    #         self.max_depth_level = max(self.max_depth_level,node.level)
             
-            for candidate_idx in range(idx,-1,-1):
-                candidate_node = node_list[candidate_idx]
+    #         number = 0
+    #         for candidate_idx in range(idx,-1,-1):
+    #             candidate_node = node_list[candidate_idx]
                 
-                if candidate_node.level == node.level - 1:
-                    candidate_node.add_children(node)
-                    break
+    #             if candidate_node.level == node.level - 1:
+    #                 candidate_node.add_children(node)
+    #                 break
         
     
-        return node_list[0]
+    #     return node_list[0]
 
+    def _construct_tree(self, node_list):
+        parent_child_counter = {}  # To keep track of the number of children each parent has
+
+        for idx in range(len(node_list) - 1, 0, -1):
+            node = node_list[idx]
+            self.max_depth_level = max(self.max_depth_level, node.level)
+
+            for candidate_idx in range(idx, -1, -1):
+                candidate_node = node_list[candidate_idx]
+                if candidate_node.level == node.level - 1:
+                    if candidate_node not in parent_child_counter:
+                        parent_child_counter[candidate_node] = 0
+
+                    # Assign a unique number to the node
+                    node.number = parent_child_counter[candidate_node]
+                    node.parent = candidate_node
+                    parent_child_counter[candidate_node] += 1
+
+                    candidate_node.add_children(node)
+                    break
+
+        return node_list[0]
+    
     def obsidian_construct_cards(self,node:Node):
         
         # print("Appending", node.obsidian_json['x'], node.obsidian_json['y'])
         print()
         print("Before")
-        print(node.tree.obsidian_json['x'])
-        node.tree.modify_x(node.x*500)
+        print(node.obsidian_json['x'])
+        node.modify_x(node.x*500)
         print("After")
-        print(node.tree.obsidian_json['x'])
+        print(node.obsidian_json['x'])
         
-        self.canvas_json['nodes'].append(node.tree.obsidian_json)
+        self.canvas_json['nodes'].append(node.obsidian_json)
         
         children_nodes = node.children
 
@@ -96,9 +120,9 @@ class Tree:
 
         for child_node in node.children:
             edge_dict = {"id":str(uuid.uuid4()),
-                         "fromNode":node.tree.uuid,
+                         "fromNode":node.uuid,
                          "fromSide":"bottom",
-                         "toNode":child_node.tree.uuid,
+                         "toNode":child_node.uuid,
                          "toSide":"top"}
             self.canvas_json['edges'].append(edge_dict)
             

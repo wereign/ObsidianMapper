@@ -4,7 +4,7 @@ import json
 
 
 class Node:
-    def __init__(self,string,level,file_name):
+    def __init__(self,string,level,parent=None,number=1):
         
         # Node Configuration
         self.level = level
@@ -17,7 +17,6 @@ class Node:
 
         # Card Contents
         self.string = string
-        self.file_name = file_name[:-3] # dropping extension
         self.uuid = str(uuid.uuid4())
         self.title_content = self.string[self.level+1:-1] # ignoring #, ## etc and the final newline
         
@@ -34,7 +33,45 @@ class Node:
             "text":self.string
         }
 
+
+        # rg algo attributes
+        self.parent = parent
+        self.thread = None
+        self.mod = 0
+        self.ancestor = self
+        self.change = self.shift = 0
+        self._lmost_sibling = None
+        self.number = number # the idx of the node among it's siblings
     
+
+    # rg algo functions
+    def left(self):
+        return self.thread or len(self.children) and self.children[0]
+    
+    def right(self):
+        return self.thread or len(self.children) and self.children[-1]
+    
+    def lbrother(self):
+        n = None
+        if self.parent:
+            print(self.parent,'parent')
+            for node in self.parent.children:
+                if node == self:
+                    return n
+                else:
+                    n = node
+        return n
+
+    def get_lmost_sibling(self):
+        if not self._lmost_sibling and self.parent and self != self.parent.children[0]:
+            self._lmost_sibling = self.parent.children[0]
+        return self._lmost_sibling
+
+    lmost_sibling = property(get_lmost_sibling)
+
+
+
+
     def modify_node_string(self,new_string):
         self.string = new_string
         self.obsidian_json['text'] = self.string
